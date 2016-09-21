@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Find the Maximum and Minimum Number</title>
+        <script type="text/javascript" language="javascript">
+
+            function SetFocus(){
+            document.SimpleForm.FirstInput.focus();
+            }
+
+            function FindMaxAndMin(){
+                var n1 = document.SimpleForm.FirstInput.value;
+                var n2 = document.SimpleForm.SecondInput.value;
+                var n3 = document.SimpleForm.ThirdInput.value;
+
+                if (isNaN(n1) || isNaN(n2) || isNaN(n3)){
+                    alert("Invalid Input ! Try Again..");
+                    document.SimpleForm.reset();
+                    SetFocus();
+                }
+                else {
+                    var MaxNum = Math.max(n1,n2,n3);
+                    var MinNum = Math.min(n1,n2,n3);
+                    var alertString = "You entered " + n1 + ", " + n2 + " and " +n3;
+                    alertString += "\nThe Maximum number is " + MaxNum;
+                    alertString += "\nThe Minimum number is " + MinNum;
+                    document.write(alertString);
+                    document.SimpleForm.reset();
+                    SetFocus();
+                    }
+            }
+
+        </script>
+    </head>
+        <body onload="SetFocus()">
+            <form name="SimpleForm">
+                <table>
+                    <tr>
+                        <td width="25%" align="right">Enter first number:</td>
+                        <td><input name="FirstInput" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td width="25%" align="right">Enter second number:</td>
+                        <td><input name="SecondInput" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td width="25%" align="right">Enter third number:</td>
+                        <td><input name="ThirdInput" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td width="25%" align="right">&nbsp;</td>
+                        <td><button type="Button" onclick="FindMaxAndMin()">Calculate</button></td>
+                    </tr>
+                </table>
+            </form>
+    </body>
+</html>
